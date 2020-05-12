@@ -1,16 +1,13 @@
 package sample;
 
 import java.util.*;
-import java.awt.event.InputEvent;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -25,7 +22,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.util.Duration;
-import jdk.nashorn.internal.runtime.arrays.ContinuousArrayData;
 
 public class Main extends Application {
     public static String selectPattern = "";                // Pattern that the cpu will select
@@ -461,7 +457,6 @@ public class Main extends Application {
         Button restartGame = new Button("Restart Game");
         restartGame.setOnAction( event ->
         {
-            System.out.println( "Restarting app!" );
             primaryStage.close();
             Platform.runLater( () -> {
                 try {
@@ -645,11 +640,9 @@ public class Main extends Application {
       
         if (playerGuess.equals(selectPattern))
         {
-            System.out.println("Your Guess was Correct!");
             isCorrect = 1;
         }
         else{
-            System.out.println("Your Guess was Wrong! Try Again!");
             isCorrect = 2;
           
             if (guessCounter > 0) {
